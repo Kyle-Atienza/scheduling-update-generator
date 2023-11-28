@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Scheduling Update Generator
+  </title>
+
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.12/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+            primary: '#C0A971',
+            secondary: '#D6D1C6',
+            accent: '#232323',
+            neutral: '#E6E5D8',
+            'base-100': '#F2F2EB',
+            info: '#C2E1E4',
+            success: '#b5deaf',
+            warning: '#FBCA19',
+            error: '#FF8989'
+          }
+        }
+      },
+    }
+  </script>
+</head>
+
+<body class="bg-neutral min-h-screen">
+  <div class="flex flex-col px-12 pt-12 pb-52 bg-white rounded-b-3xl relative">
+    <div class="flex flex-wrap gap-3 w-full  max-w-[1200px] mx-auto">
+      <div class="flex gap-3 w-full">
+        <div class="flex gap-4 p-3 flex-[7] rounded-xl shadow-lg">
+          <input type="text" id="finalPat" placeholder="Final PAT" class="input input-bordered w-full max-w-xs " />
+          <input type="text" id="filter" placeholder="Filter" class="input input-bordered w-full max-w-xs " />
+
+        </div>
+        <div class="flex gap-4 p-3 flex-[7] rounded-xl shadow-lg">
+          <input type="date" id="startDate" placeholder="Start Date" class="input input-bordered w-full max-w-xs " />
+          <input type="date" id="endDate" placeholder="End Date" class="input input-bordered w-full max-w-xs " />
+        </div>
+        <div class="flex items-center gap-2 flex-[6]  p-5 rounded-xl shadow-lg">
+          <input type="checkbox" class="checkbox" name="sunday" id="addedToCarouselSheet" /> Added to Carousel Sheet
+        </div>
+      </div>
+      <div class="div flex gap-2">
+        <div class="flex flex-col flex-[4] gap-3 p-5 rounded-xl shadow-lg">
+          <div class="badge bg-secondary py-3 ">Affected Components</div>
+          <div class="flex gap-2 p-4 border-[1px] rounded-xl">
+            <input type="checkbox" class="checkbox affectedComponents" name="carousel" value="Carousels" /> Carousels
+          </div>
+          <div class="flex gap-2 p-4 border-[1px] rounded-xl">
+            <input type="checkbox" class="checkbox affectedComponents" name="odrBanner" value="ODR Banner" /> ODR Banner
+          </div>
+        </div>
+        <div class="flex flex-[7] flex-wrap items-center gap-3 p-5 rounded-xl shadow-lg">
+          <div class="w-full">
+            <div class="badge bg-secondary py-3 ">Recurrence</div>
+          </div>
+          <div class="flex gap-2 p-4 border-[1px] rounded-xl">
+            <input type="checkbox" class="checkbox reccurenceDays" name="monday" value="Mondays" /> Mondays
+          </div>
+          <div class="flex gap-2 p-4 border-[1px] rounded-xl">
+            <input type="checkbox" class="checkbox reccurenceDays" name="tuesday" value="Tuesdays" /> Tuesdays
+          </div>
+          <div class="flex gap-2 p-4 border-[1px] rounded-xl">
+            <input type="checkbox" class="checkbox reccurenceDays" name="wednesday" value="Wednesdays" /> Wednesdays
+          </div>
+          <div class="flex gap-2 p-4 border-[1px] rounded-xl">
+            <input type="checkbox" class="checkbox reccurenceDays" name="thursday" value="Thursdays" /> Thursdays
+          </div>
+          <div class="flex gap-2 p-4 border-[1px] rounded-xl">
+            <input type="checkbox" class="checkbox reccurenceDays" name="friday" value="Fridays" /> Fridays
+          </div>
+          <div class="flex gap-2 p-4 border-[1px] rounded-xl">
+            <input type="checkbox" class="checkbox reccurenceDays" name="saturday" value="Saturdays" /> Saturdays
+          </div>
+          <div class="flex gap-2 p-4 border-[1px] rounded-xl">
+            <input type="checkbox" class="checkbox reccurenceDays" name="sunday" value="Sundays" /> Sundays
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn mt-6 w-40 bg-primary uppercase mx-auto" id="getUpdate">Get Update</button>
+    <div class=" w-[800px] bg-primary p-8 rounded-3xl absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
+      <div class="border-[1px] px-4 py-2 bg-white flex items-center justify-center leading-snug text-center rounded-lg">
+        <p class=" py-2" id="updateContainer">Input details of scheduling above</p>
+      </div>
+      <button class="btn mt-6 w-full" id="copyUpdate">Copy Update</button>
+    </div>
+  </div>
+
+
+
+  <div class="toast">
+
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
