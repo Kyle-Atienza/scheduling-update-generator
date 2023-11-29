@@ -8,6 +8,11 @@
   <title>Scheduling Update Generator
   </title>
 
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.12/dist/full.min.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -32,8 +37,8 @@
   </script>
 </head>
 
-<body class="bg-neutral min-h-screen">
-  <div class="flex flex-col px-12 pt-12 pb-52 bg-white rounded-b-3xl relative">
+<body class="bg-neutral min-h-screen flex flex-col">
+  <div class="flex flex-col p-12 bg-white rounded-b-3xl relative">
     <div class="flex flex-wrap gap-3 w-full  max-w-[1200px] mx-auto">
       <div class="flex gap-3 w-full">
         <div class="flex gap-4 p-3 flex-[7] rounded-xl shadow-lg">
@@ -88,15 +93,14 @@
       </div>
     </div>
     <button class="btn mt-6 w-40 bg-primary uppercase mx-auto" id="getUpdate">Get Update</button>
-    <div class=" w-[800px] bg-primary p-8 rounded-3xl absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
-      <div class="border-[1px] px-4 py-2 bg-white flex items-center justify-center leading-snug text-center rounded-lg">
-        <p class=" py-2" id="updateContainer">Input details of scheduling above</p>
-      </div>
-      <button class="btn mt-6 w-full" id="copyUpdate">Copy Update</button>
-    </div>
   </div>
 
-
+  <div class=" w-full max-w-[1080px] mx-auto p-8 rounded-3xl flex-1 min-h-[200px] flex flex-col">
+    <div class="border-2 border-dashed  border-secondary px-4 py-2 flex items-center justify-center leading-snug text-center rounded-lg flex-1">
+      <p class=" py-2" id="updateContainer">Input details of scheduling above</p>
+    </div>
+    <button class="btn mt-6 w-full" id="copyUpdate" disabled>Copy Update</button>
+  </div>
 
   <div class="toast">
 

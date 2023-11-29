@@ -77,6 +77,7 @@ getUpdate.addEventListener('click', () => {
     }
 
     updateContainer.innerHTML = updateHtml
+    copyUpdate.disabled = false
 })
 
 copyUpdate.addEventListener('click', () => {
