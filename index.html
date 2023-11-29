@@ -41,14 +41,28 @@
   <div class="flex flex-col p-12 bg-white rounded-b-3xl relative">
     <div class="flex flex-wrap gap-3 w-full  max-w-[1200px] mx-auto">
       <div class="flex gap-3 w-full">
-        <div class="flex gap-4 p-3 flex-[7] rounded-xl shadow-lg">
-          <input type="text" id="finalPat" placeholder="Final PAT" class="input input-bordered w-full max-w-xs " />
-          <input type="text" id="filter" placeholder="Filter" class="input input-bordered w-full max-w-xs " />
-
+        <div class=" gap-4 p-3 flex-[7] rounded-xl shadow-lg">
+          <div class="flex gap-3">
+            <input type="checkbox" class="toggle" id="needFinalPat" checked />
+            <div class="badge bg-secondary py-3 ">Final PAT</div>
+          </div>
+          <input type="text" id="finalPat" placeholder="Final PAT" class="input input-bordered w-full max-w-xs mt-3" />
         </div>
-        <div class="flex gap-4 p-3 flex-[7] rounded-xl shadow-lg">
-          <input type="date" id="startDate" placeholder="Start Date" class="input input-bordered w-full max-w-xs " />
-          <input type="date" id="endDate" placeholder="End Date" class="input input-bordered w-full max-w-xs " />
+        <div class="gap-4 p-3 flex-[7] rounded-xl shadow-lg">
+          <div class="flex gap-3">
+            <input type="checkbox" class="toggle" id="needFilter" checked />
+            <div class="badge bg-secondary py-3 ">Filter</div>
+          </div>
+          <input type="text" id="filter" placeholder="Filter" class="input input-bordered w-full max-w-xs mt-3" />
+        </div>
+        <div class=" p-3 flex-[7] rounded-xl shadow-lg">
+          <div class="flex gap-3">
+            <div class="badge bg-secondary py-3 ">Publishing Dates</div>
+          </div>
+          <div class="flex gap-4 mt-3">
+            <input type="date" id="startDate" placeholder="Start Date" class="input input-bordered w-full max-w-xs " />
+            <input type="date" id="endDate" placeholder="End Date" class="input input-bordered w-full max-w-xs " />
+          </div>
         </div>
         <div class="flex items-center gap-2 flex-[6]  p-5 rounded-xl shadow-lg">
           <input type="checkbox" class="checkbox" name="sunday" id="addedToCarouselSheet" /> Added to Carousel Sheet
@@ -63,8 +77,11 @@
           <div class="flex gap-2 p-4 border-[1px] rounded-xl">
             <input type="checkbox" class="checkbox affectedComponents" name="odrBanner" value="ODR Banner" /> ODR Banner
           </div>
+          <div class="flex gap-2 p-4 border-[1px] rounded-xl">
+            <input type="checkbox" class="checkbox affectedComponents" name="staticTile" value="Static Tile" /> Static Tile
+          </div>
         </div>
-        <div class="flex flex-[7] flex-wrap items-center gap-3 p-5 rounded-xl shadow-lg">
+        <div class="flex flex-[7] flex-wrap items-center content-start gap-3 p-5 rounded-xl shadow-lg">
           <div class="w-full">
             <div class="badge bg-secondary py-3 ">Recurrence</div>
           </div>
