@@ -74,15 +74,15 @@ getUpdate.addEventListener('click', () => {
     updateHtml += getPublishingUpdate(startDate, endDate, reccurenceDays)
     updateHtml += ` `
     if (needFilter) {
-        if (filter) {
-            if (affectedComponents.length) {
-                updateHtml += `<span>I have used the filter <b>${filter}</b> for the <b>${enumerateArrayToString(affectedComponents)}</b>.</span>`
-            } else {
-                updateHtml += `<span>I have used no filter for the <b>${enumerateArrayToString(affectedComponents)}</b>.</span>`
-            }
+        if (filter && affectedComponents.length) {
+            updateHtml += `<span>I have used the filter <b>${filter}</b> for the <b>${enumerateArrayToString(affectedComponents)}</b>.</span>`;
+        } else if (filter && !affectedComponents.length) {
+            updateHtml += `<span>I have used no filter for the <b>${enumerateArrayToString(affectedComponents)}</b>.</span>`;
         } else {
-            createToast('Please add filter', 'bg-warning')
+            createToast('Please add filter', 'bg-warning');
         }
+    } else if (affectedComponents.length) {
+        updateHtml += `<span>I have used no filter for the <b>${enumerateArrayToString(affectedComponents)}</b>.</span>`;
     }
     updateHtml += ` `
     if (needFinalPat) {
